@@ -12,9 +12,8 @@ Execute the following steps to run the visualisation on your machine.
 
 1. Execute the following commands:
 ```
-git clone https://github.com/BigDataGrapes-EU/product-prices.git
-git checkout user-study-docker
-cd product-prices
+git clone https://github.com/BigDataGrapes-EU/product-prices-public.git
+cd product-prices-public
 docker-compose up -d --build
 ```
 2. The visualisation is now running on http://localhost:3541/.
