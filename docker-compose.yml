@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+    container_name: product-prices-user-study
+    ports:
+      - '3541:3000'
+    depends_on:
+      - mongo
+    environment:
+      ROOT_URL: ${APP_ROOT_URL:-http://localhost}
+      MONGO_URL: mongodb+srv://Jeroen:rjaFi4RjbWDTfwT@cluster0.tdpdq.gcp.mongodb.net/product-prices
+      PORT: 3000
+    restart: always
+
+  mongo:
+    image: mongo:latest
+    container_name: product-prices-user-study-mongo
+    command:
+      - --storageEngine=wiredTiger
+    volumes:
+      - data:/data/db
+    restart: always
+
+volumes:
+  data:
